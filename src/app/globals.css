@@ -1,0 +1,294 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply font-poppins;
+}
+
+@layer base {
+  :root {
+    --background: 220 60% 97%;
+    --foreground: 222.2 47.4% 11.2%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 47.4% 11.2%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+    --primary: 250 84% 65%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 160 64% 66%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 220 20% 94%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 220 20% 90%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 220 20% 90%;
+    --input: 220 20% 90%;
+    --ring: 250 84% 65%;
+    --chart-1: 250 84% 65%;
+    --chart-2: 160 64% 66%;
+    --chart-3: 350 84% 65%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 1.5rem;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 222.2 47.4% 11.2%;
+    --sidebar-primary: 250 84% 65%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 220 20% 94%;
+    --sidebar-accent-foreground: 222.2 47.4% 11.2%;
+    --sidebar-border: 220 20% 90%;
+    --sidebar-ring: 250 84% 65%;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 47.4% 11.2%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 47.4% 11.2%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 250 84% 65%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 160 64% 66%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 222.2 47.4% 11.2%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+    --accent: 215 28% 17%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 215 28% 17%;
+    --input: 215 28% 17%;
+    --ring: 250 84% 65%;
+    --chart-1: 250 84% 65%;
+    --chart-2: 160 64% 66%;
+    --chart-3: 350 84% 65%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 1.5rem;
+    --sidebar-background: 222.2 47.4% 9.2%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 250 84% 65%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 215 28% 17%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 215 28% 17%;
+    --sidebar-ring: 250 84% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .icon-glow {
+     filter: drop-shadow(0 0 10px hsl(var(--primary)/0.5));
+  }
+  .bg-glass {
+    @apply bg-card/60 backdrop-blur-lg;
+  }
+}
+
+@layer utilities {
+  @keyframes print-paper {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes print-lines {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+  .animate-print-paper {
+    animation: print-paper 2s ease-out forwards;
+  }
+  .animate-print-lines {
+    transform-origin: left;
+    animation: print-lines 0.5s ease-out forwards;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes glow {
+    0%, 100% {
+      filter: drop-shadow(0 0 5px hsl(var(--primary) / 0.4)) drop-shadow(0 0 8px hsl(var(--primary) / 0.3));
+    }
+    50% {
+       filter: drop-shadow(0 0 8px hsl(var(--primary) / 0.6)) drop-shadow(0 0 12px hsl(var(--primary) / 0.5));
+    }
+  }
+  
+  @keyframes create-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.2), 0 0 30px hsl(var(--primary) / 0.1);
+      transform: scale(1);
+    }
+    50% {
+       box-shadow: 0 0 30px hsl(var(--primary) / 0.4), 0 0 45px hsl(var(--primary) / 0.3);
+       transform: scale(1.05);
+    }
+  }
+  
+  .animate-create-glow {
+      animation: create-glow 3s ease-in-out infinite;
+  }
+
+  .animate-float-glow {
+    animation: float 4s ease-in-out infinite, glow 3s ease-in-out infinite;
+  }
+
+  @keyframes glowing-border-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .animate-spin-reverse {
+    animation: spin-reverse 1s linear infinite;
+  }
+
+  @keyframes spin-reverse {
+    from {
+      transform: rotate(360deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+
+  .glowing-border {
+    @apply relative p-[3px] overflow-hidden rounded-lg z-0;
+  }
+  
+  .glowing-border::before {
+    content: '';
+    @apply absolute -top-1/2 -left-1/2 w-[200%] h-[200%] bg-no-repeat -z-10;
+    background-image: conic-gradient(
+      hsl(var(--chart-1)/0.8),
+      hsl(var(--chart-2)/0.8),
+      hsl(var(--chart-3)/0.8),
+      hsl(var(--chart-4)/0.8),
+      hsl(var(--chart-5)/0.8),
+      hsl(var(--chart-1)/0.8)
+    );
+    animation: glowing-border-spin 4s linear infinite var(--animation-play-state, running);
+  }
+
+  .dark .glowing-border::before {
+     background-image: conic-gradient(
+      hsl(var(--chart-1)),
+      hsl(var(--chart-2)),
+      hsl(var(--chart-3)),
+      hsl(var(--chart-4)),
+      hsl(var(--chart-5)),
+      hsl(var(--chart-1))
+    );
+  }
+
+  @keyframes shooting-star-trail {
+    0% {
+      transform: scale(0.5) rotate(0deg);
+      opacity: 1;
+    }
+    60% {
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0.5) rotate(0deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes shooting-star {
+    0% {
+      transform: translateX(0) translateY(0) rotate(-45deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(100px) translateY(100px) rotate(-45deg);
+      opacity: 0;
+    }
+  }
+
+  .shooting-stars {
+    @apply absolute top-0 -left-2 w-40 h-40;
+    transform: rotate(180deg);
+  }
+
+  .shooting-stars .star {
+    @apply absolute top-0 left-0 h-0.5 rounded-full;
+    background: linear-gradient(-45deg, hsl(var(--primary)), rgba(0, 0, 255, 0));
+    filter: drop-shadow(0 0 6px hsl(var(--primary)));
+    animation: shooting-star 3s ease-in-out infinite;
+  }
+
+  .shooting-stars .star::before,
+  .shooting-stars .star::after {
+    content: '';
+    @apply absolute right-0 -top-1/2 w-0.5 h-full rounded-full;
+    background: linear-gradient(-45deg, rgba(0, 0, 255, 0), hsl(var(--primary)), rgba(0, 0, 255, 0));
+    transform: translateX(50%) rotateZ(45deg);
+  }
+  .shooting-stars .star::after {
+    transform: translateX(50%) rotateZ(-45deg);
+  }
+
+  .shooting-stars .star:nth-child(2) {
+    @apply top-1/2 left-1/2;
+    animation-delay: 1s;
+  }
+
+  .shooting-stars .star:nth-child(3) {
+    @apply top-0 left-1/2;
+    animation-delay: 1.8s;
+  }
+
+  @keyframes radial-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  .animate-radial-spin {
+    animation: radial-spin 40s linear infinite var(--animation-play-state, running);
+  }
+}
