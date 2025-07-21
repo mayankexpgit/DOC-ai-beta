@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        {/* AdSense verification snippet */}
+        {/* Google AdSense Verification */}
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5849061465214269"
