@@ -238,6 +238,46 @@ export default function Home() {
                 <SidebarMenuItem>
                     <SidebarMenuButton
                         asChild
+                        tooltip="About Us"
+                    >
+                        <a href="/about-us">
+                          <span className="font-headline">About Us</span>
+                        </a>
+                    </SidebarMenuButton>
+                </SidebarMenuItem>
+                <SidebarMenuItem>
+                    <SidebarMenuButton
+                        asChild
+                        tooltip="Introduction"
+                    >
+                        <a href="/introduction">
+                          <span className="font-headline">Introduction</span>
+                        </a>
+                    </SidebarMenuButton>
+                </SidebarMenuItem>
+                <SidebarMenuItem>
+                    <SidebarMenuButton
+                        asChild
+                        tooltip="How to Use"
+                    >
+                        <a href="/how-to-use">
+                          <span className="font-headline">How to Use</span>
+                        </a>
+                    </SidebarMenuButton>
+                </SidebarMenuItem>
+                <SidebarMenuItem>
+                    <SidebarMenuButton
+                        asChild
+                        tooltip="Feedback"
+                    >
+                        <a href="/feedback">
+                          <span className="font-headline">Feedback</span>
+                        </a>
+                    </SidebarMenuButton>
+                </SidebarMenuItem>
+                <SidebarMenuItem>
+                    <SidebarMenuButton
+                        asChild
                         tooltip="Privacy Policy"
                     >
                         <a href="/privacy-policy">
