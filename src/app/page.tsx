@@ -235,6 +235,16 @@ export default function Home() {
                         <span className="font-headline">Settings</span>
                     </SidebarMenuButton>
                 </SidebarMenuItem>
+                <SidebarMenuItem>
+                    <SidebarMenuButton
+                        asChild
+                        tooltip="Privacy Policy"
+                    >
+                        <a href="/privacy-policy">
+                          <span className="font-headline">Privacy Policy</span>
+                        </a>
+                    </SidebarMenuButton>
+                </SidebarMenuItem>
             </SidebarMenu>
         </SidebarContent>
         <SidebarFooter>
