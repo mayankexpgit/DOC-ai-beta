@@ -152,9 +152,9 @@ const generateDocumentFlow = ai.defineFlow(
 
     // Step 2: Generate all images in parallel
     const allImagePrompts: (string | undefined)[] = [
-        (isPresentation && input.generateTemplate) ? textOutput.theme.backgroundPrompt : undefined,
-        ...textOutput.pages.map(p => p.imagePrompt)
-    ];
+    (input.generateTemplate) ? textOutput.theme.backgroundPrompt : undefined,
+    ...textOutput.pages.map(p => p.imagePrompt)
+];
     
     const generationPromises = allImagePrompts.map(prompt => generateImage(prompt || ''));
     const generatedImages = await Promise.all(generationPromises);
